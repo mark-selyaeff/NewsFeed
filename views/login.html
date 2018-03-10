@@ -1,0 +1,12 @@
+<!--Log in page-->
+% rebase('base.html', title='Log in', auth=True)
+<!-- The surrounding HTML is left untouched by FirebaseUI.
+     Your app may use that space for branding, controls and other customizations.-->
+<style>
+    .mdl-layout__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+</style>
+<div id="firebaseui-auth-container"></div>
