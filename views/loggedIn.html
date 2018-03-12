@@ -1,9 +1,22 @@
 % rebase('base.html', title='Logged in!')
-<script>firebase.auth().onAuthStateChanged(function(user) {
+<h1>You are successfully logged in! Redirecting to main page... wait a sec</h1>
+<script>
+firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
+    let timeSinceSignUp = ((Date.now() - new Date(firebase.auth().currentUser.metadata.creationTime).getTime())/1000);
+    console.log(timeSinceSignUp);
+//    if (timeSinceSignUp < 1000) {
+//        console.log('wrote id');
+//        firebase.database().ref('users/'+firebase.auth().currentUser.uid).set({username: firebase.auth().currentUser.email});
+//    }
     user.getIdToken().then(function(token) {
-      Cookies.set('auth', token)
-        window.location.href = '/';
+      Cookies.set('auth', token);
+      if (timeSinceSignUp < 1000) {
+        console.log('wrote id');
+        firebase.database().ref('users/'+firebase.auth().currentUser.uid).set({username: firebase.auth().currentUser.email});
+      }
+      setTimeout("location.href = '/';",2000);
     });
   }
-});</script>
+});
+</script>

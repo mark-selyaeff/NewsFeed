@@ -5,7 +5,7 @@ window.onload = function() {
 
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
-        userName.textContent = user.displayName;
+        userName.textContent = user.displayName ? user.displayName : user.email;
         logoutButton.style.display = "";
       } else {
         userName.textContent = "Log In";

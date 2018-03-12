@@ -3,6 +3,8 @@ import firebase_admin
 from firebase_admin import auth
 
 def check_token(id_token):
+    if not id_token:
+        return False
     try:
         # Verify the ID token while checking if the token is revoked by
         # passing check_revoked=True.
@@ -13,7 +15,7 @@ def check_token(id_token):
     except auth.AuthError as exc:
         if exc.code == 'ID_TOKEN_REVOKED':
             # Token revoked, inform the user to reauthenticate or signOut().
-            return "Revoked"
-        else:
+            return False
+    except:
             # Token is invalid
-            return "Wrong token"
+        return False

@@ -1,12 +1,13 @@
 % rebase('base.html', title='About')
-<h2>About News Feed</h2>
-<p>This is exactly what News Feed is:</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam facilisis porttitor elit ut pharetra. Nam in gravida erat, eu mattis lorem. Nam sem velit, posuere vitae ante nec, facilisis pretium leo. Maecenas lacinia, leo mattis maximus condimentum, purus orci rhoncus nibh, sed pulvinar ante ante vehicula ex. Cras a arcu eros. Integer ut tincidunt ex. Ut sollicitudin leo eu placerat tincidunt. Quisque interdum quam in leo imperdiet feugiat. Aenean mollis, justo id ullamcorper mollis, ex ligula sodales sem, et tempor magna risus eget ipsum. Etiam nec erat libero.
 
-Duis cursus turpis vitae pharetra auctor. Nam nec justo ante. Sed ac nulla a diam suscipit blandit eget id quam. Pellentesque laoreet dignissim mattis. Quisque maximus, ligula ac malesuada auctor, felis erat feugiat enim, eget tincidunt sem neque nec neque. Mauris sollicitudin ac purus quis dapibus. Nulla semper et ligula nec dictum.
+<script>
+    document.getElementById('about').classList.add('currentLink');
+</script>
 
-Nulla luctus faucibus mi ultrices interdum. Etiam semper magna diam, vel scelerisque justo fermentum eget. Duis rutrum consequat ipsum. Proin turpis lacus, ultrices quis interdum in, elementum quis orci. Proin sagittis semper eros, et dictum leo commodo et. Nam dapibus quis nisl sed efficitur. Proin quis diam vel orci tristique finibus ornare eget justo. Curabitur sed efficitur ante, vitae accumsan velit. Mauris at interdum lectus. Sed in metus risus. Vivamus elementum tortor eu massa lobortis hendrerit. Praesent felis tortor, pellentesque vitae blandit sit amet, cursus quis nibh. Suspendisse at tristique ante, eget semper elit.
-
-Nullam rutrum sem turpis, ac congue metus ullamcorper in. Maecenas suscipit ex quam, in suscipit ligula vulputate sed. Nulla quis libero fringilla, faucibus sapien sed, tempor nulla. Vivamus at orci luctus, pretium est ac, dictum nulla. Donec non euismod odio. Integer ut est magna. Nam est felis, rhoncus in lacus quis, viverra condimentum quam. Aliquam justo dui, condimentum non pharetra eu, eleifend eu lorem. In at urna massa. Vivamus sed arcu eu magna sagittis vestibulum vitae sed arcu. Quisque odio mauris, aliquam non sagittis non, finibus vel lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer sed leo porttitor, mattis odio vehicula, efficitur purus. Pellentesque aliquam pharetra tempor. Aenean efficitur neque gravida odio efficitur lobortis.
-
-Nam tempus cursus dolor, ut scelerisque nulla finibus sed. Donec viverra eros urna, ac aliquet justo vehicula nec. Suspendisse ac turpis et elit laoreet blandit nec quis erat. Ut accumsan nunc ante, a tempor nulla euismod et. Sed posuere nec velit id aliquam. Proin non sapien eget risus semper aliquet. Cras in quam a elit luctus pellentesque vel et magna. Vivamus sed nulla aliquet, venenatis mauris ut, euismod ligula. Suspendisse tincidunt risus turpis, non imperdiet magna posuere et. Etiam lobortis lorem eu massa accumsan efficitur. Maecenas vel lorem lorem. Ut posuere nisi ac sapien sagittis, quis mattis ante ultricies. Integer luctus dolor ac velit finibus ornare. Etiam ac eros in odio rutrum auctor ut eu mauris. Maecenas vehicula sapien ut purus gravida, interdum interdum ante interdum.</p>
+<h3>About News Feed</h3>
+<p id="aboutParagraph">
+    News Feed offers personolized recommendations based on Naive Bayes Classification (green – recommened, red – not recommened).
+    News Feed uses Firebase as a main backend provider with a little help of
+    <a href="https://bottlepy.org/docs/dev/">Bottle</a> lightweight Python framework for serving static files,
+    handling redirects and HTTP response codes.
+</p>

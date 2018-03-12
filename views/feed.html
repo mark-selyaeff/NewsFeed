@@ -1,0 +1,17 @@
+% rebase('base.html', title='News feed')
+<script>
+    document.getElementById('feed').classList.add('currentLink');
+</script>
+<h3 id="warning"></h3>
+<table class="mdl-data-table mdl-js-data-table" id="news-table">
+    <thead>
+    <tr>
+        <th class="mdl-data-table__cell--non-numeric">Article title</th>
+        <th class="mdl-data-table__cell--non-numeric">Date</th>
+    </tr>
+    </thead>
+    <tbody id="news-table-body">
+
+    </tbody>
+</table>
+<script src="/static/feed-script.js?ver=6"></script>

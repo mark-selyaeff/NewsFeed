@@ -1,0 +1,28 @@
+<!--Main page-->
+% rebase('base.html', title='Training the feed')
+<h5>After training the classifier you can go check your <a href="/feed">feed</a></h5>
+<form action="#">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="fetchNumberOfNews">
+    <label class="mdl-textfield__label" for="fetchNumberOfNews">Number...</label>
+    <span class="mdl-textfield__error">Input is not a number!</span>
+    <button class="mdl-button mdl-js-button mdl-button--primary" id="fetchNews">
+        Fetch articles
+    </button>
+  </div>
+</form>
+<div id="index-content">
+    <table class="mdl-data-table mdl-js-data-table" id="news-table">
+      <thead>
+        <tr>
+          <th class="mdl-data-table__cell--non-numeric">Article title</th>
+          <th class="mdl-data-table__cell--non-numeric">Date</th>
+          <th class="mdl-data-table__cell--non-numeric">Like</th>
+          <th class="mdl-data-table__cell--non-numeric">Dislike</th>
+        </tr>
+      </thead>
+      <tbody id="news-table-body">
+      </tbody>
+    </table>
+</div>
+<script src="/static/news-script.js"></script>

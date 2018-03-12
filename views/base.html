@@ -9,12 +9,14 @@
     <title>{{ get('title', 'NewsFeed') }}</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/style.css?ver=3">
+    <script src="/static/require.js"></script>
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     % include('firebase-setup.html')
     <!--Local static script-->
     <script src="/static/script-base.js"></script>
+    <!--<title>{{ title or 'NewsFeed' }}</title>-->
 </head>
 <body>
 <div class="mdl-layout mdl-js-layout">
@@ -24,7 +26,9 @@
       <a href="/" class="mdl-layout__title">News Feed</a>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="/about">About</a>
+        <a class="mdl-navigation__link" href="/about" id="about">About</a>
+        <a class="mdl-navigation__link" href="/train" id="trainFeed">Train your feed</a>
+        <a class="mdl-navigation__link" href="/feed" id="feed">Feed</a>
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="login-button">
             <span id="userName"></span>
             <i class="material-icons" id="logoutButton">account_circle</i>
@@ -33,17 +37,6 @@
       </nav>
     </div>
   </header>
-  <!--<div class="mdl-layout__drawer">-->
-    <!--<span class="mdl-layout__title">News Feed</span>-->
-    <!--<nav class="mdl-navigation">-->
-      <!--<a class="mdl-navigation__link" href="/about">About</a>-->
-        <!--<button class="mdl-button mdl-js-button mdl-button&#45;&#45;raised mdl-button&#45;&#45;colored" id="login-button">-->
-            <!--<span id="userName"></span>-->
-            <!--<i class="material-icons" id="logoutButton">account_circle</i>-->
-        <!--</button>-->
-        <!--<button class="mdl-button mdl-js-button mdl-button&#45;&#45;raised mdl-button&#45;&#45;colored logout-button" id="logout-button">Log out</button>-->
-    <!--</nav>-->
-  <!--</div>-->
   <main class="mdl-layout__content">
       {{!base}}
   </main>
