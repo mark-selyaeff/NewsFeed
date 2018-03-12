@@ -1,9 +1,8 @@
 import re
 from bottle import route, run, template, request, get, static_file, redirect
 import firebase_admin
-from firebase_admin import credentials, auth, db
+from firebase_admin import credentials
 from additional_modules import check_token
-from textblob.classifiers import NaiveBayesClassifier
 
 @route('/static/<filename>')
 def staticfiles(filename): # serving static files
@@ -40,29 +39,11 @@ def feed():
         return template('feed.html', uid=uid)
     else:
         redirect('/login')
-        # train = []
-        # marked_news = db.reference('users/{}/news'.format(uid)).get()
-        # for id, info in marked_news.items():
-        #     train.append((info['title'], info['label']))
-        # cl = NaiveBayesClassifier(train)
 
-
-
-
-# @route('/')
-# def index():
-#     if request.get_cookie("auth"):
-
-
-
-
-
-
-# @route('/check')
-# def check():
 
 cred = credentials.Certificate('newsfeed-d44e7-firebase-adminsdk-f0mrx-759d544fad.json')
 default_app = firebase_admin.initialize_app(cred, {
     'databaseURL': 'https://newsfeed-d44e7.firebaseio.com/'
 })
-run(host='localhost', port=8080, debug=True)
+
+run(host='0.0.0.0', port=80, debug=True)
